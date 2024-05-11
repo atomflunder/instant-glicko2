@@ -1,7 +1,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include "glicko2_math.h"
-#include <stdio.h>
 
 double g_value(double opponent_deviation)
 {
