@@ -94,5 +94,5 @@ void get_confidence_interval() {
 ## Building
 
 ```bash
-gcc glicko2.c glicko2_math.c -o glicko2.o -lm -fPIC && ar -rcs libglicko2.a glicko2.o 
+gcc src/glicko2.c src/glicko2_math.c -o glicko2.o -lm -fPIC && ar -rcs libglicko2.a glicko2.o 
 ```
