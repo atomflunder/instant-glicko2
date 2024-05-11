@@ -147,35 +147,6 @@ void pretty_print_player(struct Glicko2Player player)
     struct ConfidenceInterval c = confidence_interval(player, DEFAULT_CERTAINTY_FACTOR);
 
     printf(
-        "Glicko-2 Rating: %.10f (95%% Interval: %.5f - %.5f)\nGlicko-2 Deviation: %.10f\nGlicko-2 Volatility: %.25f\n\n",
+        "Glicko-2 Rating: %.10f (95%% Interval: %.5f - %.5f)\nGlicko-2 Deviation: %.10f\nGlicko-2 Volatility: %.15f\n\n",
         player.rating, c.low_end, c.high_end, player.deviation, player.volatility);
-}
-
-int main()
-{
-    struct Glicko2Player p1 = {
-        rating : 1500.0,
-        deviation : 200.0,
-        volatility : 0.06,
-    };
-
-    struct Glicko2Player p2 = {
-        rating : 1400.0,
-        deviation : 30.0,
-        volatility : 0.06,
-    };
-
-    struct Glicko2Match m = {
-        player_one : p1,
-        player_two : p2,
-        outcome : PLAYER_ONE_WIN,
-        tau : DEFAULT_TAU,
-        convergence_tolerance : DEFAULT_CONVERGENCE_TOLERANCE,
-    };
-
-    m = glicko2(m);
-
-    pretty_print_player(m.player_one);
-
-    return 0;
 }
