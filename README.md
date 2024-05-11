@@ -91,6 +91,23 @@ void get_confidence_interval() {
 }
 ```
 
+### Deviation Decay
+
+```c
+void decay_player() {
+    struct Glicko2Player p1 = {
+        rating : 1500.0,
+        deviation : 30.0,
+        volatility : 0.06,
+    };
+
+    struct Glicko2Player new_p = decay_deviation(p1);
+
+    // Output: New Deviation: 31.759099
+    printf("New Deviation: %f\n", new_p.deviation);
+}
+```
+
 ## Building
 
 ```bash
