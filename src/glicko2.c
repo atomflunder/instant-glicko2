@@ -163,25 +163,3 @@ void pretty_print_player(struct Glicko2Player player)
         "Glicko-2 Rating: %.6f (95%% Interval: %.2f - %.2f)\nGlicko-2 Deviation: %.6f\nGlicko-2 Volatility: %.15f\n\n",
         player.rating, c.low_end, c.high_end, player.deviation, player.volatility);
 }
-
-void main()
-{
-    struct Glicko2Player p1 = {
-        rating : 1200.4,
-        deviation : 45.0,
-        volatility : 0.06
-    };
-
-    struct Glicko2Player p2 = {
-        rating : 1610.4,
-        deviation : 245.0,
-        volatility : 0.06
-    };
-
-    struct Glicko2Match m = {
-        player_one : p1,
-        player_two : p2,
-    };
-
-    struct ExpectedScore ex = expected_score(m);
-}
