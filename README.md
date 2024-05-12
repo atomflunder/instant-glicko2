@@ -8,9 +8,9 @@ Instant Glicko-2 in C, without rating periods.
 ```c
 void get_rating() {
     struct Glicko2Player p1 = {
-        rating : 1500.0,
-        deviation : 200.0,
-        volatility : 0.06,
+        rating : DEFAULT_RATING,         // 1500.0
+        deviation : DEFAULT_DEVIATION,   // 350.0
+        volatility : DEFAULT_VOLATILITY, // 0.06
     };
 
     struct Glicko2Player p2 = {
@@ -23,7 +23,7 @@ void get_rating() {
         player_one : p1,
         player_two : p2,
         outcome : PLAYER_ONE_WIN,
-        tau : DEFAULT_TAU, // 0.5
+        tau : DEFAULT_TAU,                                     // 0.5
         convergence_tolerance : DEFAULT_CONVERGENCE_TOLERANCE, // 0.000001
     };
 
@@ -31,9 +31,9 @@ void get_rating() {
 
     // Convenience function to print a player's stats.
     // Output:
-    // Glicko-2 Rating: 1563.5641943063 (95% Interval: 1219.77499 - 1907.35340)
-    // Glicko-2 Deviation: 175.4026559386
-    // Glicko-2 Volatility: 0.0599986573048476162783871
+    // Glicko-2 Rating: 1631.368920 (95% Interval: 1127.05 - 2135.69)
+    // Glicko-2 Deviation: 252.160006
+    // Glicko-2 Volatility: 0.059998868152305
     pretty_print_player(m.player_one);
 
     return;
