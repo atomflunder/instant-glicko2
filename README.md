@@ -84,7 +84,7 @@ void get_confidence_interval() {
 
     struct ConfidenceInterval c = confidence_interval(p, DEFAULT_CERTAINTY_FACTOR); // 2.0
 
-    // Output: High: 1443.480000 - Low: 1196.520000
+    // Output: High: 1446.000000 - Low: 1194.000000
     printf("High: %f - Low: %f\n", c.high_end, c.low_end);
 
     return;
