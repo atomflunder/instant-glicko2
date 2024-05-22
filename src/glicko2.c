@@ -161,8 +161,8 @@ void pretty_print_player(struct Glicko2Player player) {
     struct ConfidenceInterval c =
         confidence_interval(player, DEFAULT_CERTAINTY_FACTOR);
 
-    printf("Glicko-2 Rating: %.6f (95%% Interval: %.2f - %.2f)\nGlicko-2 "
-           "Deviation: %.6f\nGlicko-2 Volatility: %.15f\n\n",
+    printf("Glicko-2 Rating: %.6lf (95%% Interval: %.2lf - %.2lf)\nGlicko-2 "
+           "Deviation: %.6lf\nGlicko-2 Volatility: %.15lf\n\n",
            player.rating, c.low_end, c.high_end, player.deviation,
            player.volatility);
 }
